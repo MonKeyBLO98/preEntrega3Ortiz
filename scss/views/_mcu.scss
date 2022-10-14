@@ -1,0 +1,238 @@
+.container {  
+    margin: 0;
+    padding: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    gap: 2px 2px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "m1 a1 m2 a2 m3 a3 m4 a4"
+    "a8 m8 a7 m7 a6 m6 a5 m5"
+    "m9 a9 m10 a10 m11 a11 m12 a12"
+    "a16 m16 a15 m15 a14 m14 a13 m13"
+    "m17 a17 m18 a18 m19 a19 m20 a20"
+    "a24 m24 a23 m23 a22 m22 a21 m21"
+    "m25 a25 m26 a26 m27 a27 m28 a28"
+    "a32 m32 a31 m31 a30 m30 a29 m29"
+    "m33 a33 m34 a34 m35 a35 m36 a36"
+    ". . . . . m38 a37 m37";
+    align-items: center;
+    justify-items: stretch;
+}
+@for $i from 1 through 38 {
+    .m#{$i}{
+        grid-area: m#{$i};
+    }
+}  
+@for $i from 1 through 37 {
+    .a#{$i}{
+        grid-area: a#{$i};
+    }
+}
+
+
+
+/*media movil*/
+@media (max-width: $peques) {
+    .container{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(38, 1fr);
+        grid-template-areas:
+        "m1 a1"
+        "a2 m2"
+        "m3 a3"
+        "a4 m4"
+        "m5 a5"
+        "a6 m6"
+        "m7 a7"
+        "a8 m8"
+        "m9 a9" 
+        "a10 m10" 
+        "m11 a11"
+        "a12 m12" 
+        "m13 a13" 
+        "a14 m14"
+        "m15 a15"
+        "a16 m16" 
+        "m17 a17" 
+        "a18 m18"
+        "m19 a19"
+        "a20 m20" 
+        "m21 a21" 
+        "a22 m22"
+        "m23 a23"
+        "a24 m24" 
+        "m25 a25" 
+        "a26 m26"
+        "m27 a27"
+        "a28 m28" 
+        "m29 a29"
+        "a30 m30"            
+        "m31 a31"
+        "a32 m32" 
+        "m33 a33" 
+        "a34 m34"
+        "m35 a35"
+        "a36 m36" 
+        "m37 a37" 
+        ". m38";
+        .poster{
+            img{
+                width: $peq/2;
+            }
+        }
+        .arrow{
+            img{
+                width: $peq/2;
+            }
+        }
+    }
+}
+/*media tablet vertical*/
+@media (max-width: $medianas) and (min-width: $peques) {
+    .container{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(19, 1fr);
+        grid-template-areas:
+        "m1 a1 m2 a2"
+        "a4 m4 a3 m3"
+        "m5 a5 m6 a6"
+        "a8 m8 a7 m7"
+        "m9 a9 m10 a10" 
+        "a12 m12 a11 m11"
+        "m13 a13 m14 a14"
+        "a16 m16 a15 m15"
+        "m17 a17 m18 a18"
+        "a20 m20 a19 m19"
+        "m21 a21 m22 a22"
+        "a24 m24 a23 m23"
+        "m25 a25 m26 a26"
+        "a28 m28 a27 m27"
+        "m29 a29 m30 a30"            
+        "a32 m32 a31 m31"
+        "m33 a33 m34 a34"
+        "a36 m36 a35 m35"
+        "m37 a37 m38 .";
+        .poster{
+            img{
+                width: $peques/4;
+            }
+        }
+        .arrow{
+            img{
+                width: $peques/4;
+            }
+        }
+    }
+}
+/*media tablet horizontal*/
+@media (max-width: $grandes) and (min-width: $medianas) {
+    .container{
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(13, 1fr);
+        grid-template-areas:
+        "m1 a1 m2 a2 m3 a3" 
+        "a6 m6 a5 m5 a4 m4"
+        "m7 a7 m8 a8 m9 a9"
+        "a12 m12 a11 m11 a10 m10"
+        "m13 a13 m14 a14 m15 a15"
+        "a18 m18 a17 m17 a16 m16   "
+        "m19 a19 m20 a20 m21 a21"
+        "a24 m24 a23 m23 a22 m22"
+        "m25 a25 m26 a26 m27 a27 "
+        "a30 m30 a29 m29 a28 m28"
+        "m31 a31 m32 a32 m33 a33 "
+        "a36 m36 a35 m35 a34 m34"
+        "m37 a37 m38 . . .";
+        .poster{
+            img{
+                width: $medianas/6;
+            }
+        }
+        .arrow{
+            img{
+                width: $medianas/6;
+            }
+        }
+    }
+    @each $listRight in a1,a2,a7,a8,a13,a14,a19,a20,a25,a31,a32,a37 {
+        .#{$listRight}{
+            transform: rotate($rotRight);
+        }
+    }
+    @each $listLeft in a4,a5,a10,a11,a16,a17,a22,a23,a28,a29,a34,a35 {
+        .#{$listLeft}{
+            transform: rotate($rotLeft);
+        }
+    }
+}
+/*media escritorio*/
+@media (max-width: $extraGrandes) and (min-width: $grandes) {
+    .container{
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+        grid-template-areas:
+        "m1 a1 m2 a2 m3 a3 m4 a4"
+        "a8 m8 a7 m7 a6 m6 a5 m5"
+        "m9 a9 m10 a10 m11 a11 m12 a12"
+        "a16 m16 a15 m15 a14 m14 a13 m13"
+        "m17 a17 m18 a18 m19 a19 m20 a20"
+        "a24 m24 a23 m23 a22 m22 a21 m21"
+        "m25 a25 m26 a26 m27 a27 m28 a28"
+        "a32 m32 a31 m31 a30 m30 a29 m29"
+        "m33 a33 m34 a34 m35 a35 m36 a36"
+        ". . . . . m38 a37 m37";
+        .poster{
+            img{
+                width: $grandes/8;
+            }
+        }
+        .arrow{
+            img{
+                width: $grandes/8;
+            }
+        }
+    }
+    @each $listRight in a1,a2,a3,a9,a10,a11,a17,a18,a19,a25,a26,a27,a33,a34,a35 {
+        .#{$listRight}{
+            transform: rotate($rotRight);
+        }
+    }
+    @each $listLeft in a5,a6,a7,a13,a14,a15,a21,a22,a23,a29,a30,a31,a37 {
+        .#{$listLeft}{
+            transform: rotate($rotLeft);
+        }
+    }
+}
+/*edia escritorio grande*/
+@media (min-width: $extraGrandes) {
+    .container{
+        width: $extraGrandes;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+        grid-template-areas:
+        "m1 a1 m2 a2 m3 a3 m4 a4 m5 a5 m6 a6"
+        "a12 m12 a11 m11 a10 m10 a9 m9 a8 m8 a7 m7"
+        "m13 a13 m14 a14 m15 a15 m16 a16 m17 a17 m18 a18"
+        "a24 m24 a23 m23 a22 m22 a21 m21 a20 m20 a19 m19"
+        "m25 a25 m26 a26 m27 a27 m28 a28 m29 a29 m30 a30"
+        "a36 m36 a35 m35 a34 m34 a33 m33 a32 m32 a31 m31"
+        "m37 a37 m38 . . . . . . . . .";
+        .poster{
+            img{
+                width: $extraGrandes/12;
+            }
+        }
+        .arrow{
+            img{
+                width: $extraGrandes/12;
+            }
+        }
+
+    }
+}
+
+
+

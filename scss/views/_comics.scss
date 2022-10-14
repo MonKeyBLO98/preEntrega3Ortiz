@@ -1,0 +1,10 @@
+.sectionComics {
+    background-color: $darkgris;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(115, 4, 8, 0.3333333333) 25%, transparent 25%) -15px 0/30px 30px, linear-gradient(225deg, $bordo 25%, transparent 25%) -15px 0/30px 30px, linear-gradient(315deg, rgba(115, 4, 8, 0.3333333333) 25%, transparent 25%) 0px 0/30px 30px, linear-gradient(45deg, $bordo 25%, $darkgris 25%) 0px 0/30px 30px;
+    padding-bottom: 1rem;
+    row{
+        opacity: 0.9;
+    }
+
+}

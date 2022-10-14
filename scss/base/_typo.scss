@@ -1,0 +1,33 @@
+@font-face {
+    font-family: "PlayfairDisplaySC";
+    src: url(../assets/fonts/playfairDisplaySC/PlayfairDisplaySC-Regular.ttf);
+}  
+@font-face {
+font-family: "Raleway";
+  src: url(../assets/fonts/raleway/Raleway-Regular.ttf);
+}
+
+body {
+    background-color: $madera;
+    font-family: "Raleway";
+}
+h1 {
+  font-family: "PlayfairDisplaySC";
+  color: $madera;
+  text-align: center;
+  padding: 0.6rem;
+  background-color: $darkgris;
+  border-bottom-style:double;
+  border-color: $tronco;
+}
+h2 {
+  font-family: "Raleway";
+  color: $salmon;
+  text-align: left;
+  padding: 0.3rem;
+  width: fit-content;
+  background-color: $darkgris;
+  background-size: contain;
+  border-style: inset;
+  border-color: $tronco;
+}
